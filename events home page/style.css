@@ -1,12 +1,189 @@
-body {
-    font-family: Arial, sans-serif;
-}
+.content-all {
+        background-color: rgb(22, 27, 34);
+        width: 100% ;
+        height: 780px;
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    }
+    body{
+        background-color: rgb(22, 27, 34);
+    }
 
-.card {
-    margin-bottom: 20px;
-}
+    .container-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        position: relative;
+        top: 100px;
+        margin: 50px;
+        gap: 20px;
+        background-color:rgb(22, 27, 34) ;
+    }
+    #card{
+        border: double 5px grey;
+        
+    }
+    .card-title {
+        display: flex;
+        position: relative;
+        top: 10px;
+        justify-content: center;
+
+    }
+
+    .card-body {
+        position: relative;
+        left: 5px;
+    }
+
+    .cardimg {
+        width: 100px;
+        height: 135px;
+        margin-left: 30px;
+        margin-top: 20px;
+
+    }
+
+    .header {
+        position: relative;
+        top: 100px;
+        display: flex;
+        justify-content: center;
+        border: 5px double gray;
+        margin: 0px 400px;
+        background-color: azure;
+        border-radius: 10px;
+    }
+
+    .title-img {
+        border-radius: 50%;
+        display: inline;
+    }
+
+    @media only screen and (max-width: 1200px){
+        .content-all {
+            background-color: rgb(22, 27, 34);
+            width: 100% ;
+            height: 100%;
+        
+        }
+        body{
+            background-color: rgb(22, 27, 34);
+        }
+        
+        .container-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            position: relative;
+            top: 100px;
+            margin: 50px;
+            gap: 20px;
+            background-color:rgb(22, 27, 34) ;
+        }
+        #card{
+            border: double 5px grey;
+            
+        }
+        .card-title {
+            display: flex;
+            position: relative;
+            top: 10px;
+            justify-content: center;
+        
+        }
+        
+        .card-body {
+            position: relative;
+            left: 5px;
+        }
+        
+        .cardimg {
+            width: 130px;
+            height: 160px;
+            margin-left: 30px;
+            margin-top: 1px;
+        
+        }
+        
+        .header {
+            position: relative;
+            top: 100px;
+            display: flex;
+            justify-content: center;
+            border: 5px double gray;
+            margin: 0px 400px;
+            background-color: azure;
+            border-radius: 10px;
+        }
+        .header h2{
+            font-size:25px;
+        }
+        
+        .title-img {
+            border-radius: 50%;
+            display: inline;
+        }
+        
+    }
+        
+
+    @media only screen and (max-width:600px) {
+
+        .content-all {
+            background-color: rgb(22, 27, 34);
+            width: 100% ;
+            height: 100%;
+        
+        }
+
+
+        .container-grid {
+            display: grid;
+            grid-template-columns: 500px;
+            position: relative;
+            top: 100px;
+            margin: 50px;
+            gap: 20px;
+            justify-items: center;
+            
+        }
+
+        .header {
+            position: relative;
+            top: 100px;
+            display: flex;
+            justify-content: center;
+            border: 5px double gray;
+            margin: 0px 50px;
+            background-color: azure;
+            border-radius: 10px;
+        }
+
+        .card-body {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        
+
+        }
+
+        .cardimg {
+            width: 150px;
+            height: 200px;
+            margin-left: 30%;
+            margin-top: 20px;
+            display: block;
+
+        }
+
+        #card {
+            width: 400px;
+            border: double 5px grey;
+        display: flex;
+        justify-content: center;
+        
+
+        }
+    }
+    
