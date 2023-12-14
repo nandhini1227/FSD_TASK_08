@@ -1,48 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Event I</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Events</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-H+K7U5Cn1lZs0hjaTE5Z/s4KQl4bY56qceHtxF0ObF8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </head>
-<body>
-    <div class="container mt-3">
-        <h1 class="text-center">Image Event I</h1>
-        <h3 class="text-center mb-4">Number of available seats: 23</h3>
 
-        <form>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name">
+<body>
+    <div class="content-all">
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img style="border-radius: 50%; height: 30px; width: 30px; margin: 0px 5px;"
+                src="data:image/png;base64,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">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+        </nav>
+
+        <div class="card mb-3" id="card">
+            <div class="header">
+                <h2 style="display: flex; justify-content: center;">Event 1 </h2></h2>
+                <p style="display: flex; justify-content: center;" >Number of  Available Seats: 23</p>
             </div>
-            <div class="form-group">
-                <label for="phone">Phone No.:</label>
-                <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <img src="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-kaatrin-mozhi-live-in-concert-0-2023-11-4-t-7-35-23.jpg" style="width: 300px; height: 400px;" class="card-img" alt="Image">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+
+                        <form action="#" method="post">
+
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number:</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="seats" class="form-label">Number of Seats :</label>
+                                <select class="form-select" id="seats" name="seats" required>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Attendee" class="form-label">Name of Attendee 2:</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="button" class="btn btn-secondary">Cancel</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="seats">Number of seats:</label>
-                <input type="number" class="form-control" id="seats" placeholder="Enter number of seats">
-            </div>
-            <div class="form-group">
-                <label for="name2">Name of Attendee 2:</label>
-                <input type="text" class="form-control" id="name2" placeholder="Enter name of attendee 2">
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                <button type="button" class="btn btn-secondary">Cancel</button>
-            </div>
-        </form>
+        </div>
     </div>
 
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
