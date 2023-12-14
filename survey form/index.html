@@ -2,56 +2,190 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Satisfaction Survey</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>Event-update</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center mt-5">Customer Satisfaction Survey</h1>
-        <form class="mt-5">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+   <div class="container border">
+       <!-- Name Section -->
+    <p class="h4">Name*</p>
+    <form>
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control">
+            <label for="firstname">FirstName</label><br>
+          </div>
+
+            <div class="col">
+            <input type="text" class="form-control">
+            <label for="firstname">LastName</label><br><br>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        </div>
+        <!-- E-Mail Section -->
+        <div>
+            <label for="email"><h4>E-Mail</h4></label>
+            <input type="email" class="form-control"><br><br>
+        </div>
+      </form>
+      <!-- Rating Section -->
+      <div class="your">
+        <p class="h4">Your Experience*</p>
+      </div>
+      <div class="star font-weight-bold">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <p>Overall How would you rate your experience with us?</p>
+      </div>
+      
+      <!-- Radio Button 1-->
+      <div class="grid-layout container ">
+        <p class="h4">How satisfied are your with*</p>
+      <div class="row border">
+          <div class="col"></div>
+          <div class="col">very unsatisfied</div>
+          <div class="col">unsatisfied</div>
+          <div class="col">neutral</div>
+          <div class="col">satisfied</div>
+          <div class="col">very satisfied</div>
+      </div>
+      <div class="row border">
+        <div class="col">purchase</div>
+        <div class="col">
+            <div class="col-md-4 form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"></div></div>
+        <div class="col"><div class="col-md-2 form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"></div></div>
+        <div class="col">
+            <div class="col-md-2 form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"></div></div>
+        <div class="col">
+            <div class="col-md-2 form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"></div></div>
+        <div class="col">
+            <div class="col-md-2 form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"></div></div>    
+        </div>
+
+        <div class="row border">
+            <div class="col">Service</div>
+            <div class="col">
+                <div class="col-md-2 form-check1 form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2"></div></div>
+            <div class="col"><div class="col-md-2 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1"></div></div>
+            <div class="col">
+                <div class="col-md-2 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1"></div></div>
+            <div class="col">
+                <div class="col-md-2 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1"></div></div>
+            <div class="col">
+                <div class="col-md-2 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1"></div></div>    
             </div>
-            <div class="form-group">
-                <label for="experience">Your Experience *</label>
-                <select class="form-control" id="experience">
-                    <option>Purchase Service</option>
-                    <option>Company Overall</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="rating">How likely are you to recommend us?</label>
-                <select class="form-control" id="rating">
-                    <option>Very Unsatisfied</option>
-                    <option>Unsatisfied</option>
-                    <option>Neutral</option>
-                    <option>Satisfied</option>
-                    <option>Very Satisfied</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="recommend">How likely are you to rate your experience with us?</label>
-                <select class="form-control" id="recommend">
-                    <option>Very Unlikely</option>
-                    <option>Unlikely</option>
-                    <option>Neutral</option>
-                    <option>Likely</option>
-                    <option>Very Likely</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="comments">Additional comments or suggestions</label>
-                <textarea class="form-control" id="comments" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+            <div class="row border">
+                <div class="col">Company Overall</div>
+                <div class="col">
+                    <div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1"></div></div>
+                <div class="col"><div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1"></div></div>
+                <div class="col">
+                    <div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1"></div></div>
+                <div class="col">
+                    <div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1"></div></div>
+                <div class="col">
+                    <div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1"></div></div><br>    
+                </div>
     </div>
+
+    
+
+    <!-- Radio Button 2-->
+    <div class="grid-layout container">
+        <p class="h4">How likely are you to*</p>
+        <div class="row border">
+            <div class="col"></div>
+            <div class="col">Very Unlikely</div>
+            <div class="col">Unlikely</div>
+            <div class="col">Neutral</div>
+            <div class="col">Likely</div>
+            <div class="col">Very Likely</div>
+        </div>
+   
+        <div class="row border">
+            <div class="col">Buy from us again</div>
+            <div class="col">
+                <div class="col-md-2 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="RadioOptions" id="inlineRadio1" value="option1"></div></div>
+            <div class="col"><div class="col-md-2 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="RadioOptions" id="inlineRadio1" value="option1"></div></div>
+            <div class="col">
+                <div class="col-md-2 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="RadioOptions" id="inlineRadio1" value="option1"></div></div>
+            <div class="col">
+                <div class="col-md-2 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="RadioOptions" id="inlineRadio1" value="option1"></div></div>
+            <div class="col">
+                <div class="col-md-2 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="RadioOptions" id="inlineRadio1" value="option1"></div></div>    
+            </div>
+
+            <div class="row border">
+                <div class="col">Recommend our product to others</div>
+                <div class="col">
+                    <div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="RadioOption" id="inlineRadio1" value="option1"></div></div>
+                <div class="col"><div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="RadioOption" id="inlineRadio1" value="option1"></div></div>
+                <div class="col">
+                    <div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="RadioOption" id="inlineRadio1" value="option1"></div></div>
+                <div class="col">
+                    <div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="RadioOption" id="inlineRadio1" value="option1"></div></div>
+                <div class="col">
+                    <div class="col-md-2 form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="RadioOption" id="inlineRadio1" value="option1"></div></div>    
+                </div>
+
+                <div class="row border">
+                    <div class="col">Recommend our Company to others</div>
+                    <div class="col">
+                        <div class="col-md-2 form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="RadioOpt" id="inlineRadio1" value="option1"></div></div>
+                    <div class="col"><div class="col-md-2 form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="RadioOpt" id="inlineRadio1" value="option1"></div></div>
+                    <div class="col">
+                        <div class="col-md-2 form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="RadioOpt" id="inlineRadio1" value="option1"></div></div>
+                    <div class="col">
+                        <div class="col-md-2 form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="RadioOpt" id="inlineRadio1" value="option1"></div></div>
+                    <div class="col">
+                        <div class="col-md-2 form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="RadioOpt" id="inlineRadio1" value="option1"></div></div> <br><br>   
+                    </div>
+                </div><br><br>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1"><h4>Additional comments or suggestion</h4></label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea><br>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                  </div>
+                </form>
+   </div>
+
 </body>
 </html>
