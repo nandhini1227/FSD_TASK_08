@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Satisfaction Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Customer Satisfaction Survey</h1>
+        <form class="mt-5">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="experience">Your Experience *</label>
+                <select class="form-control" id="experience">
+                    <option>Purchase Service</option>
+                    <option>Company Overall</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rating">How likely are you to recommend us?</label>
+                <select class="form-control" id="rating">
+                    <option>Very Unsatisfied</option>
+                    <option>Unsatisfied</option>
+                    <option>Neutral</option>
+                    <option>Satisfied</option>
+                    <option>Very Satisfied</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="recommend">How likely are you to rate your experience with us?</label>
+                <select class="form-control" id="recommend">
+                    <option>Very Unlikely</option>
+                    <option>Unlikely</option>
+                    <option>Neutral</option>
+                    <option>Likely</option>
+                    <option>Very Likely</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Additional comments or suggestions</label>
+                <textarea class="form-control" id="comments" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

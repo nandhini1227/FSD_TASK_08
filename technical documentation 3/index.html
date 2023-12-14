@@ -1,0 +1,130 @@
+header>
+  <nav id="nav-bar">
+    <header>
+      Basic Snapshooting
+    </header>
+    <ul>
+      <li><a class="nav-link" href="#add">Git add</a></li>
+      <li><a class="nav-link" href="#status">Git status</a></li>
+      <li><a class="nav-link" href="#diff">Git diff</a></li>
+      <li><a class="nav-link" href="#commit">Git commit</a></li>
+      <li><a class="nav-link" href="#reset">Git reset</a></li>
+      <li><a class="nav-link" href="#rm">Git rm</a></li>
+      <li><a class="nav-link" href="#mv">Git mv</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main-doc">
+  <section id="add" class="main-section">
+    <header>
+      git-add - Add file contents to the index
+    </header>
+    <h2>Synopsis</h2>
+    <code>
+      git add [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
+	  [--edit | -e] [--[no-]all | --[no-]ignore-removal | [--update | -u]]
+	  [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing] [--renormalize]
+	  [--chmod=(+|-)x] [--] [&lt;pathspec&gt;…]
+    </code>
+    <h2>Description</h2>
+    <p>This command updates the index using the current content found in the working tree, to prepare the content staged for the next commit. It typically adds the current content of existing paths as a whole, but with some options it can also be used to add content with only part of the changes made to the working tree files applied, or remove paths that do not exist in the working tree anymore.</p>
+    <p>
+The "index" holds a snapshot of the content of the working tree, and it is this snapshot that is taken as the contents of the next commit. Thus after making any changes to the working tree, and before running the commit command, you must use the add command to add any new or modified files to the index.</p>
+
+    <p>This command can be performed multiple times before a commit. It only adds the content of the specified file(s) at the time the add command is run; if you want subsequent changes included in the next commit, then you must run git add again to add the new content to the index.</p>
+
+    <p>The git status command can be used to obtain a summary of which files have changes that are staged for the next commit.</p>
+
+    <p>The git add command will not add ignored files by default. If any ignored files were explicitly specified on the command line, git add will fail with a list of ignored files. Ignored files reached by directory recursion or filename globbing performed by Git (quote your globs before the shell) will be silently ignored. The git add command can be used to add ignored files with the -f (force) option.</p>
+
+    <p>Please see git-commit[1] for alternative ways to add content to a commit.</p>
+    
+  </section>
+  <section id="status" class="main-section">
+    <header>
+      git-status - Show the working tree status
+    </header>
+    <h2>Synopsis</h2>
+    <code>
+      git status [&lt;options&gt;…?] [--] [&lt;pathspec&gt;…]
+    </code>
+    <h2>Description</h2>
+    <p>Displays paths that have differences between the index file and the current HEAD commit, paths that have differences between the working tree and the index file, and paths in the working tree that are not tracked by Git (and are not ignored by gitignore[5]). The first are what you would commit by running git commit; the second and third are what you could commit by running git add before running git commit.</p>   
+  </section>
+  <section id="diff" class="main-section">
+    <header>
+      git-diff - Show changes between commits, commit and working tree, etc
+    </header>
+    <h2>Synopsis</h2>
+    <code>
+      <ul>
+        <li>git diff [&lt;options&gt;] [&lt;commit&gt;] [--] [&lt;path&gt;…?]</li>
+        <li>git diff [&lt;options&gt;] --cached [&lt;commit&gt;] [--] [&lt;path&gt;…?]</li>
+        <li>git diff [&lt;options&gt;] &lt;commit&gt; &lt;commit&gt; [--] [&lt;path&gt;…?]</li>
+        <li>git diff [&lt;options&gt;] &lt;blob&gt; &lt;blob&gt;</li>
+        <li>git diff [&lt;options&gt;] --no-index [--] &lt;path&gt; &lt;path&gt;</li>
+      </ul>
+    </code>
+    <h2>Description</h2>
+    <p>Show changes between the working tree and the index or a tree, changes between the index and a tree, changes between two trees, changes between two blob objects, or changes between two files on disk.</p>   
+  </section>
+  <section id="commit" class="main-section">
+    <header>
+      git-commit - Record changes to the repository
+    </header>
+    <h2>Synopsis</h2>
+    <code>
+      <ul>
+        <li>git commit [-a | --interactive | --patch] [-s] [-v] [-u&lt;mode&gt;] [--amend]
+	   [--dry-run] [(-c | -C | --fixup | --squash) &lt;commit&gt;]
+	   [-F &lt;file&gt; | -m &lt;msg&gt;] [--reset-author] [--a&gt;low-empty]
+	   [--allow-empty-message] [--no-verify] [-e] [--author=&lt;author&gt;]
+	   [--date=&lt;date&gt;] [--cleanup=&lt;mode&gt;] [--[no-]status]
+	   [-i | -o] [-S[&lt;keyid&gt;]] [--] [&lt;file&gt;…?]</li>
+      </ul>
+    </code>
+    <h2>Description</h2>
+    <p>Create a new commit containing the current contents of the index and the given log message describing the changes. The new commit is a direct child of HEAD, usually the tip of the current branch, and the branch is updated to point to it (unless no branch is associated with the working tree, in which case HEAD is "detached" as described in git-checkout[1]).</p>   
+  </section>
+  <section id="reset" class="main-section">
+    <header>
+      git-reset - Reset current HEAD to the specified state
+    </header>
+    <h2>Synopsis</h2>
+    <code>
+      <ul>
+        <li>git reset [-q] [&lt;tree-ish&gt;] [--] &lt;paths&gt;…?</li>
+        <li>git reset (--patch | -p) [&lt;tree-ish&gt;] [--] [&lt;paths&gt;…?]</li>
+        <li>git reset [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [&lt;commit&gt;]</li>
+      </ul>
+    </code>
+    <h2>Description</h2>
+    <p>In the first and second form, copy entries from &lt;tree-ish&gt; to the index. In the third form, set the current branch head (HEAD) to &lt;commit&gt;, optionally modifying index and working tree to match. The &lt;tree-ish&gt;/&lt;commit&gt; defaults to HEAD in all forms.</p>   
+  </section>
+  <section id="rm" class="main-section">
+    <header>
+      git-rm - Remove files from the working tree and from the index
+    </header>
+    <h2>Synopsis</h2>
+    <code>
+      <ul>
+        <li>git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch] [--quiet] [--] &lt;file&gt;…?</li>
+      </ul>
+    </code>
+    <h2>Description</h2>
+    <p>Remove files from the index, or from the working tree and the index. git rm will not remove a file from just your working directory. (There is no option to remove a file only from the working tree and yet keep it in the index; use /bin/rm if you want to do that.) The files being removed have to be identical to the tip of the branch, and no updates to their contents can be staged in the index, though that default behavior can be overridden with the -f option. When --cached is given, the staged content has to match either the tip of the branch or the file on disk, allowing the file to be removed from just the index.</p>   
+  </section>
+  <section id="mv" class="main-section">
+    <header>
+      git-mv - Move or rename a file, a directory, or a symlink
+    </header>
+    <h2>Synopsis</h2>
+    <code>
+      <ul>
+        <li>git mv &lt;options&gt;… &lt;args&gt;…</li>
+      </ul>
+    </code>
+    <h2>Description</h2>
+    <p>Move or rename a file, directory or symlink.</p>   
+  </section>
+</main>
